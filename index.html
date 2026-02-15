@@ -9,9 +9,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap');
 
 body{
-    background:#ffeef2; /* lighter pink */
     margin:0;
     font-family:'Montserrat',sans-serif;
+    background:#fff5f7; /* lighter pink */
     color:#5c0a1a;
     overflow-x:hidden;
 }
@@ -19,10 +19,10 @@ body{
 /* FLOATING HEARTS BACKGROUND */
 .heart-bg{
     position:fixed;
-    width:100%;
-    height:100%;
     top:0;
     left:0;
+    width:100%;
+    height:100%;
     pointer-events:none;
     z-index:-1;
 }
@@ -41,98 +41,53 @@ body{
 /* HEADER */
 header{
     text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(#ffd6de,#ffeef2);
+    padding:80px 20px;
+    background:linear-gradient(#ffe0e9,#fff5f7);
 }
 
 h1{
     font-family:'Dancing Script',cursive;
-    font-size:3.5rem;
-    color:#c9184a;
+    font-size:3.2rem;
+    color:#d6336c;
+    margin-bottom:10px;
 }
 
 /* BUTTON */
 .open-btn{
-    margin-top:20px;
-    padding:14px 28px;
+    margin-top:25px;
+    padding:14px 32px;
     border:none;
-    border-radius:30px;
+    border-radius:40px;
     background:#ff8fab;
     color:white;
-    font-size:1rem;
+    font-size:1.1rem;
     cursor:pointer;
     transition:.3s;
 }
 
 .open-btn:hover{
-    transform:scale(1.08);
+    transform:scale(1.1);
     background:#ff6b8a;
 }
 
-/* HEART POP ANIMATION */
-.pop-heart{
-    position:fixed;
-    font-size:30px;
-    animation:pop 1s ease forwards;
-    pointer-events:none;
-}
-
-@keyframes pop{
-    0%{transform:scale(0);opacity:1;}
-    60%{transform:scale(1.4);}
-    100%{transform:scale(0);opacity:0;}
-}
-
-/* GALLERY */
-.gallery{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    padding:40px;
-}
-
-.polaroid{
-    background:white;
-    padding:15px 15px 40px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-    max-width:250px;
-    transition:.4s;
-}
-
-.polaroid img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-}
-
-.polaroid:hover{
-    transform:scale(1.1);
-}
-
-/* LETTER (HIDDEN FIRST) */
-.letter-container{
+/* LETTER */
+.letter{
     max-width:700px;
     margin:40px auto;
     background:white;
     padding:40px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-    border-left:5px solid #ff8fab;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    line-height:1.8;
 
     opacity:0;
     transform:translateY(40px);
     transition:1s ease;
 }
 
-.letter-container.show{
+.letter.show{
     opacity:1;
     transform:translateY(0);
-}
-
-.letter-text{
-    line-height:1.8;
-    white-space:pre-wrap;
 }
 
 .signature{
@@ -141,6 +96,19 @@ h1{
     font-size:2rem;
     text-align:right;
     color:#c9184a;
+}
+
+/* POP HEARTS */
+.pop-heart{
+    position:fixed;
+    font-size:30px;
+    animation:pop 1s ease forwards;
+}
+
+@keyframes pop{
+    0%{transform:scale(0);opacity:1;}
+    60%{transform:scale(1.6);}
+    100%{transform:scale(0);opacity:0;}
 }
 
 footer{
@@ -153,11 +121,10 @@ footer{
 
 <body>
 
-<!-- MUSIC (hidden) -->
+<!-- Hidden YouTube Music -->
 <iframe id="music"
 width="0" height="0"
-src="https://www.youtube.com/embed/9lQPxlCMEcE?enablejsapi=1&autoplay=0&loop=1&playlist=9lQPxlCMEcE"
-frameborder="0"
+src="https://www.youtube.com/embed/9lQPxlCMEcE?enablejsapi=1"
 allow="autoplay">
 </iframe>
 
@@ -165,26 +132,22 @@ allow="autoplay">
 
 <header>
 <h1>Happy Valentine's Day, Asawa Qouh! 🩷</h1>
-<p>To my pinaka mabait na maldita in da werld</p>
+<p>To my favorite person, my nurse, and my life.</p>
 
-<button class="open-btn" onclick="openLetter()">Open My Letter 💌</button>
+<button class="open-btn" onclick="openLetter()">
+Open My Letter 💌
+</button>
 </header>
 
-<div class="gallery">
-<div class="polaroid"><img src="1000017011.jpg"></div>
-<div class="polaroid"><img src="1000017018.jpg"></div>
-<div class="polaroid"><img src="1000016998.jpg"></div>
-<div class="polaroid"><img src="1000016880.jpg"></div>
-</div>
+<div class="letter" id="letter">
+Salamat sa pasensya love, alam kong unang paghinga ko palang sa mundo pambbwisit na karakas ko 😆
+Thank you so much sa pagsama sa akin sa lahat lahat mommy, sa pag intindi, at sa pagtitiwala sa mga panahon na wala na ako sa sarili ko 🥹
 
-<div class="letter-container" id="letter">
-<div class="letter-text">
-Salamat sa pasensya love, alam kong unang paghinga ko palang sa mundo pambbwisit na karakas ko😆
-Thank you so much sa pagsama sa akin sa lahat lahat mommy, sa pag intindi, at sa pagtitiwala...
+Ikaw na ang pinaka mabait na malditang nakilala ko hahaha.
+Hindi ko ipagpapalit buhay na ito dahil nariyan ka palagi para sa atin 😘
 
 I love you my gwapa lami himos humot kaayo wife!
-I'm always proud of you my nurse zsang😘
-</div>
+I'm always proud of you my nurse zsang ❤️
 
 <div class="signature">
 Nagmamahal,<br>Khrishna
@@ -196,39 +159,39 @@ Forever & Always 🌹
 </footer>
 
 <script>
-/* FLOATING BACKGROUND HEARTS */
-const bg=document.getElementById('heart-bg');
-const icons=['❤','💖','💕','💗','🌸'];
+/* FLOATING HEARTS */
+const bg=document.getElementById("heart-bg");
+const icons=["❤","💖","💕","💗","🌸"];
 
 function createHeart(){
-    const h=document.createElement('div');
-    h.className='heart';
-    h.innerHTML=icons[Math.floor(Math.random()*icons.length)];
-    h.style.left=Math.random()*100+'vw';
-    h.style.fontSize=(Math.random()*20+10)+'px';
-    h.style.animationDuration=(Math.random()*3+3)+'s';
-    bg.appendChild(h);
-    setTimeout(()=>h.remove(),6000);
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    bg.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
 }
 setInterval(createHeart,300);
 
-/* OPEN LETTER + HEART POP + MUSIC */
+/* OPEN LETTER */
 function openLetter(){
     document.getElementById("letter").classList.add("show");
 
-    // play music after click (browser allowed)
-    const iframe=document.getElementById("music");
-    iframe.src="https://www.youtube.com/embed/9lQPxlCMEcE?autoplay=1&loop=1&playlist=9lQPxlCMEcE";
+    /* start music */
+    document.getElementById("music").src =
+    "https://www.youtube.com/embed/9lQPxlCMEcE?autoplay=1&loop=1&playlist=9lQPxlCMEcE";
 
-    // popping hearts
-    for(let i=0;i<20;i++){
-        const heart=document.createElement("div");
-        heart.className="pop-heart";
-        heart.innerHTML="💖";
-        heart.style.left=Math.random()*100+"vw";
-        heart.style.top=Math.random()*100+"vh";
-        document.body.appendChild(heart);
-        setTimeout(()=>heart.remove(),1000);
+    /* heart pop animation */
+    for(let i=0;i<25;i++){
+        const h=document.createElement("div");
+        h.className="pop-heart";
+        h.innerHTML="💖";
+        h.style.left=Math.random()*100+"vw";
+        h.style.top=Math.random()*100+"vh";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),1000);
     }
 }
 </script>
